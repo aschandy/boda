@@ -16,8 +16,8 @@
 
     --max-width: 1120px;
     --narrow-width: 720px;
-    --gutter: clamp(1.25rem, 5vw, 4rem);
-    --section-space: clamp(4.75rem, 13vw, 10rem);
+    --gutter: 1.375rem;
+    --section-space: 4rem;
 }
 
 * {
@@ -132,7 +132,7 @@ a {
 }
 
 .music-intro__content {
-    width: min(92vw, 760px);
+    width: min(100%, 760px);
     text-align: center;
     transform: translateY(0);
     transition: transform 650ms ease, opacity 650ms ease;
@@ -231,7 +231,7 @@ a {
 
 .hero__content,
 .finale__content {
-    width: min(96vw, 980px);
+    width: min(calc(100% - 2 * var(--gutter)), 980px);
     padding: 6rem 0 5rem;
     text-align: center;
 }
@@ -244,7 +244,7 @@ a {
     margin: 0 0 1.2rem;
     color: currentColor;
     font-family: var(--font-body);
-    font-size: clamp(0.68rem, 2.2vw, 0.82rem);
+    font-size: 0.75rem;
     font-weight: 500;
     letter-spacing: 0.24em;
     line-height: 1.4;
@@ -386,12 +386,16 @@ a {
     background: transparent;
     color: var(--color-petroleum);
     cursor: pointer;
-    font: 500 0.78rem/1.2 var(--font-body);
+    font: 500 0.8125rem/1.2 var(--font-body);
     letter-spacing: 0.18em;
     text-align: left;
     text-decoration: none;
     text-transform: uppercase;
     transition: color 180ms ease, opacity 180ms ease;
+}
+
+.text-button {
+    padding-inline: 0;
 }
 
 .text-link:hover,
@@ -407,6 +411,7 @@ a {
 }
 
 .countdown-section {
+    padding-block: clamp(3rem, 7vw, 5rem);
     background: var(--color-paper);
     color: var(--color-petroleum);
 }
@@ -415,8 +420,8 @@ a {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: clamp(0.45rem, 3vw, 2rem);
-    margin-top: 1.5rem;
-    padding: clamp(1.2rem, 4vw, 2rem) 0;
+    margin-top: 1.1rem;
+    padding: clamp(1rem, 2.5vw, 1.5rem) 0;
     border-top: 1px solid rgba(46, 83, 85, 0.24);
     border-bottom: 1px solid rgba(46, 83, 85, 0.24);
 }
@@ -428,7 +433,7 @@ a {
 .countdown span {
     display: block;
     font-family: var(--font-editorial);
-    font-size: clamp(2.55rem, 11vw, 8rem);
+    font-size: 3rem;
     font-weight: 400;
     line-height: 0.95;
     white-space: nowrap;
@@ -438,7 +443,7 @@ a {
     display: block;
     margin-top: 0.35rem;
     color: var(--color-muted);
-    font-size: clamp(0.58rem, 2.2vw, 0.78rem);
+    font-size: 0.6875rem;
     font-weight: 500;
     letter-spacing: 0.16em;
     line-height: 1.2;
@@ -488,7 +493,8 @@ a {
 .address {
     margin: 1.3rem 0 0;
     color: rgba(239, 232, 183, 0.72);
-    font-size: clamp(1rem, 3.4vw, 1.28rem);
+    font-size: 1.0625rem;
+    line-height: 1.65;
 }
 
 .place-details {
@@ -508,7 +514,7 @@ a {
 
 .place-details dt {
     color: rgba(239, 232, 183, 0.68);
-    font-size: 0.74rem;
+    font-size: 0.8125rem;
     font-weight: 500;
     letter-spacing: 0.16em;
     text-transform: uppercase;
@@ -517,6 +523,7 @@ a {
 .place-details dd {
     margin: 0;
     color: var(--color-cream);
+    font-size: 1rem;
 }
 
 .place-actions {
@@ -547,8 +554,8 @@ a {
 
 .calendar-actions p {
     margin: 0;
-    color: rgba(239, 232, 183, 0.68);
-    font-size: 0.72rem;
+    color: var(--color-cream);
+    font-size: 0.8125rem;
     font-weight: 500;
     letter-spacing: 0.2em;
     line-height: 1.4;
@@ -680,23 +687,23 @@ a {
     margin: 0.35rem 0 0;
     color: var(--color-petroleum);
     font-family: var(--font-script);
-    font-size: clamp(2.6rem, 7vw, 4.7rem);
+    font-size: 2.25rem;
     font-weight: 400;
     line-height: 0.9;
 }
 
 .gallery-flow {
-    --gallery-photo-gap: 8px;
+    --gallery-photo-gap: 10px;
     display: grid;
     width: min(100%, var(--max-width));
-    margin: clamp(2rem, 5vw, 3.75rem) auto 0;
+    margin: 1.5rem auto 0;
     padding-inline: var(--gutter);
     row-gap: var(--gallery-photo-gap);
 }
 
 .gallery-photo,
 .gallery-note {
-    width: 85%;
+    width: 100%;
     margin-inline: auto;
 }
 
@@ -747,7 +754,7 @@ a {
 }
 
 .gallery-note {
-    margin-block: 0.5rem;
+    margin-block: 2rem;
     text-align: left;
     color: var(--color-petroleum);
     font-family: var(--font-editorial);
@@ -807,16 +814,17 @@ a {
     margin-bottom: 1.0rem;
 }
 
-.gifts-section p {
+.gifts-section p:not(.eyebrow):not(.copy-status) {
     margin: 1.2rem 0 0;
     color: var(--color-muted);
-    font-size: clamp(1rem, 3vw, 1.16rem);
+    font-size: 1.0625rem;
+    line-height: 1.65;
 }
 
 .gift-list {
     display: grid;
     gap: 0;
-    margin: 2.25rem 0 1.5rem;
+    margin: 1.75rem 0 1.5rem;
     border-top: 1px solid rgba(46, 83, 85, 0.24);
 }
 
@@ -830,7 +838,7 @@ a {
 
 .gift-list dt {
     color: var(--color-muted);
-    font-size: 0.74rem;
+    font-size: 0.8125rem;
     font-weight: 500;
     letter-spacing: 0.16em;
     text-transform: uppercase;
@@ -839,11 +847,20 @@ a {
 .gift-list dd {
     margin: 0;
     color: var(--color-ink);
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
     word-break: break-word;
+}
+
+.gift-list dd[data-config="gift.account"] {
+    font-variant-numeric: tabular-nums;
 }
 
 .copy-status {
     min-height: 1.6em;
+    margin: 0.75rem 0 0;
+    font-size: 0.875rem;
 }
 
 .rsvp-section {
@@ -859,7 +876,7 @@ a {
     margin-bottom: 1.0rem;
 }
 
-.rsvp-section p {
+.rsvp-section p:not(.eyebrow) {
     margin: 1.15rem 0 0;
     color: rgba(239, 232, 183, 0.78);
     font-size: clamp(1rem, 3vw, 1.18rem);
@@ -914,7 +931,18 @@ a {
     transform: translateY(0);
 }
 
+@media (min-width: 400px) {
+    .countdown span {
+        font-size: 3.25rem;
+    }
+}
+
 @media (min-width: 700px) {
+    :root {
+        --gutter: clamp(1.25rem, 5vw, 4rem);
+        --section-space: clamp(4.75rem, 13vw, 10rem);
+    }
+
     .hero__content,
     .finale__content {
         width: min(86vw, 1040px);
@@ -927,11 +955,54 @@ a {
     .place-carousel {
         aspect-ratio: 5 / 6.3;
     }
+
+    .countdown span {
+        font-size: 5.5rem;
+    }
+
+    .countdown small {
+        font-size: 0.75rem;
+    }
+
+    .gallery-heading h2 {
+        font-size: 3rem;
+    }
+
+    .gallery-flow {
+        margin-top: clamp(2rem, 5vw, 3.75rem);
+    }
+
+    .gallery-photo,
+    .gallery-note {
+        width: 85%;
+    }
+
+    .gifts-section p:not(.eyebrow):not(.copy-status) {
+        font-size: 1.16rem;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 1023px) {
+    .place-copy h2 {
+        font-size: 3.5rem;
+    }
 }
 
 @media (min-width: 1024px) {
     .hero__content {
         padding-top: 8rem;
+    }
+
+    .countdown span {
+        font-size: 8.5rem;
+    }
+
+    .gallery-heading h2 {
+        font-size: 4rem;
+    }
+
+    .address {
+        font-size: 1.28rem;
     }
 
     .gallery-flow {

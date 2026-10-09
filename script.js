@@ -235,7 +235,7 @@ function updateCountdown() {
     const minutes = Math.floor((distance % 3600000) / 60000);
     const seconds = Math.floor((distance % 60000) / 1000);
 
-    document.getElementById("countdownDays").textContent = String(days).padStart(3, "0");
+    document.getElementById("countdownDays").textContent = pad(days);
     document.getElementById("countdownHours").textContent = pad(hours);
     document.getElementById("countdownMinutes").textContent = pad(minutes);
     document.getElementById("countdownSeconds").textContent = pad(seconds);

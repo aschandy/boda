@@ -14,7 +14,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Imperial+Script&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Imperial+Script&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -84,6 +84,10 @@
                             <dt>Hora fin</dt>
                             <dd data-config="wedding.endTime">[HORA]</dd>
                         </div>
+                        <div>
+                            <dt>Vestimenta</dt>
+                            <dd data-config="wedding.dressCode">Formal</dd>
+                        </div>
                     </dl>
                     <div class="place-actions" aria-label="Acciones del lugar y calendario">
                         <a class="text-link place-actions__directions" id="mapsLink" href="[GOOGLE_MAPS_URL]" target="_blank" rel="noopener">C&Oacute;MO LLEGAR &rarr;</a>
@@ -92,7 +96,7 @@
                             <div class="calendar-actions__links">
                                 <a class="text-link" id="googleCalendarLink" href="#" target="_blank" rel="noopener">GOOGLE &rarr;</a>
                                 <span aria-hidden="true">o</span>
-                                <a class="text-link" id="icsDownloadLink" href="wedding.ics" download>CALENDAR &rarr;</a>
+                                <a class="text-link" id="icsDownloadLink" href="wedding.ics" download>APPLE &rarr;</a>
                             </div>
                         </div>
                     </div>
@@ -188,11 +192,14 @@
                     </div>
                     <div>
                         <dt>Cuenta</dt>
-                        <dd data-config="gift.account">[CUENTA]</dd>
+                        <dd>
+                            <span data-config="gift.account">[CUENTA]</span>
+                            <span class="gift-currency">(<span data-config="gift.currency">UYU/USD</span>)</span>
+                        </dd>
                     </div>
                 </dl>
 
-                <button class="text-button" id="copyGiftButton" type="button">COPIAR DATOS &rarr;</button>
+                <button class="text-button" id="copyGiftButton" type="button">COPIAR CUENTA &rarr;</button>
                 <p class="copy-status" id="copyStatus" aria-live="polite"></p>
             </div>
         </section>

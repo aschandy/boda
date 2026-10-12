@@ -39,6 +39,7 @@ const WEDDING_CONFIG = {
         date: "2026-12-05",
         startTime: "18:00",
         endTime: "03:00",
+        dressCode: "Formal",
         city: "Montevideo, Uruguay",
         timeZone: "America/Montevideo",
     },
@@ -56,7 +57,8 @@ const WEDDING_CONFIG = {
     gift: {
         bank: "BBVA",
         holder: "Alicia Schandy",
-        account: "1234567",
+        account: "24018643",
+        currency: "UYU/USD",
     }
 };
 
@@ -316,16 +318,6 @@ function setupIcsDownload() {
     link.download = "wedding.ics";
 }
 
-function giftText() {
-    const gift = WEDDING_CONFIG.gift;
-
-    return [
-        `Banco: ${gift.bank || "[BANCO]"}`,
-        `Titular: ${gift.holder || "[TITULAR]"}`,
-        `Cuenta: ${gift.account || "[CUENTA]"}`,
-    ].join("\n");
-}
-
 function fallbackCopy(text) {
     const textarea = document.createElement("textarea");
     textarea.value = text;
@@ -362,7 +354,7 @@ function setupGiftCopy() {
 
     button.addEventListener("click", async () => {
         try {
-            await copyText(giftText());
+            await copyText(WEDDING_CONFIG.gift.account);
             button.textContent = "COPIADO \u2713";
         } catch (error) {
             status.textContent = "No se pudo copiar automaticamente.";
@@ -370,7 +362,7 @@ function setupGiftCopy() {
 
         window.setTimeout(() => {
             status.textContent = "";
-            button.textContent = "COPIAR DATOS \u2192";
+            button.textContent = "COPIAR CUENTA \u2192";
         }, 2600);
     });
 }
